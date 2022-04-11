@@ -93,11 +93,11 @@ module.exports = function expressListRoutes(app, opts) {
             const stackPath = path.resolve(
               [options.prefix, stack.routerPath, stack.route.path, route.path].filter((s) => !!s).join(''),
             );
+            const routePath = stackPath.replaceAll(/\s*\(.*?\)\s*/g, "").replaceAll('(', '').replaceAll(')', '')
 
-            options.print && options.logger(stackMethod, stackSpace, stackPath);
+            options.print && options.logger(stackMethod, stackSpace, routePath);
             routeLogged[method] = true;
 
-            const routePath = stackPath.replaceAll(/\s*\(.*?\)\s*/g, "").replaceAll('(', '').replaceAll(')', '')
             routes[routePath] = route.name;
           }
         }
