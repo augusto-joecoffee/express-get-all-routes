@@ -95,8 +95,7 @@ module.exports = function expressListRoutes(app, opts) {
             );
             // options.logger(stackMethod, stackSpace, stackPath);
             routeLogged[method] = true;
-            const path = stackPath.replace(/(\[.*?\])/g, '')
-            routes.push(path)
+            routes.push(stackPath.replaceAll(/\s*\(.*?\)\s*/g, "").replaceAll('(', '').replaceAll(')', ''));
           }
         }
       }
