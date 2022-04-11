@@ -93,7 +93,7 @@ module.exports = function expressListRoutes(app, opts) {
             const stackPath = path.resolve(
               [options.prefix, stack.routerPath, stack.route.path, route.path].filter((s) => !!s).join(''),
             );
-            options.logger(stackMethod, stackSpace, stackPath);
+            // options.logger(stackMethod, stackSpace, stackPath);
             routeLogged[method] = true;
             routes.push(stackPath);
           }
