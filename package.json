@@ -1,5 +1,5 @@
 {
-  "name": "express-get-routes",
+  "name": "express-find-routes",
   "version": "1.0.0",
   "description": "List routes for Express 4",
   "keywords": [
